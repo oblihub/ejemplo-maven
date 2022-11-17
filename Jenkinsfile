@@ -81,7 +81,8 @@ pipeline {
             steps {
                 script {
                     echo "Downloading artifact from nexus"
-                    ls -ltr
+                    sh 'curl -X GET -u admin:admin http://nexus:8081/repository/ejercicio-clase4-mod4/com/devopsusach2020/DevOpsUsach2020/0.0.1/DevOpsUsach2020-0.0.1.jar -O'
+                    sh 'ls -ltr'
                 }
             }
         }
