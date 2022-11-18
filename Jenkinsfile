@@ -58,11 +58,11 @@ pipeline {
                         if(isUnix()) {
                             echo 'Unix OS'
                                 sh './mvnw clean verify sonar:sonar \
-                                     -Dsonar.projectKey=example-maven2'
+                                     -Dsonar.projectKey=ejemplo-maven'
                         } else {
                             echo 'Windows OS'
                                 bat 'mvnw clean verify sonar:sonar \
-                                    -Dsonar.projectKey=example-maven2'
+                                    -Dsonar.projectKey=ejemplo-maven'
                         }
                         echo '.....Sonar scan completed'
                     }
@@ -81,7 +81,7 @@ pipeline {
             steps {
                 script {
                     echo "Downloading artifact from nexus"
-                    sh 'curl -X GET -u admin:admin http://nexus:8081/repository/devops-usach-nexus/com/devopsusach2020/DevOpsUsach2020/0.0.1/DevOpsUsach2020-0.0.1.jar -O'
+                    sh 'curl -X GET -u 4 http://nexus:8081/repository/devops-usach-nexus/com/devopsusach2020/DevOpsUsach2020/0.0.1/DevOpsUsach2020-0.0.1.jar -O'
                     sh 'ls -ltr'
                 }
             }
